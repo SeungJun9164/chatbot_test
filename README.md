@@ -1,7 +1,8 @@
 # chatbot_test
 
 # 영어 챗봇 구현해보기
-https://tutorials.pytorch.kr/beginner/chatbot_tutorial.html
+### pytorch_chatbot_tutorial.ipynb
+- https://tutorials.pytorch.kr/beginner/chatbot_tutorial.html
 
 # 한국어 챗봇 구현해보기
 ### ko_pytorch_chatbot_tutorial 
