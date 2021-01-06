@@ -4,6 +4,12 @@
 ### pytorch_chatbot_tutorial.ipynb
 - https://tutorials.pytorch.kr/beginner/chatbot_tutorial.html
 
+### bert_en_pytorch_chatbot_tutorial.ipynb
+- bert_ko_pytorch_chatbot_tutorial 와 동시에 진행 중
+- 동일한 증상때문에 실행불가능
+- 수정중...
+
+
 # 한국어 챗봇 구현해보기
 ### ko_pytorch_chatbot_tutorial 
 - https://github.com/songys/Chatbot_data 의 데이터를 이용하여 구현
@@ -22,5 +28,5 @@
 - 3를 개선 시켜 bert를 이용하여 데이터 분리함
 - bert의 vocab을 이용하여 대화를 인코딩까지 완료함
 - 하지만 인코딩한 길이가 길어지는 문제가 있음.
-- 길이가 길어서 그런지 훈련이 되지 않음.
+- 인코딩, 디코딩 부분까지 수정완료. 메모리 부족으로 훈련이 안되는데 어딘가 잘못된듯
 - 수정중...
