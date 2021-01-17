@@ -7,7 +7,6 @@
 ### bert_en_pytorch_chatbot_tutorial.ipynb
 - bert_ko_pytorch_chatbot_tutorial 와 동시에 진행 중
 - 현재 bert_ko와 마찬가지로 제대로 된 대답 불가능
-- 수정중
 
 
 # 한국어 챗봇 구현해보기
@@ -31,4 +30,9 @@
 - 인코딩, 디코딩 부분까지 수정완료. 메모리 부족으로 훈련이 안되는데 어딘가 잘못된듯 - 수정완료(배치사이즈 64 -> 32로 수정)
 - 훈련까지 마치고 대화를 수행하면 동일한 말만 반복하는 문제발생 - 수정완료(훈련 횟수 4000 -> 12000)
 - 모든 부분 기존 tutorial과 차이점이 없어 훈련 수 12000으로 증가시켜 진행 - 여전히 제대로 된 대화 안됨
-- SKTBrain의 [KoBert](https://github.com/SKTBrain/KoBERT)를 사용해 볼 계획(KoBert 공부 중)
+- SKTBrain의 [KoBert](https://github.com/SKTBrain/KoBERT)를 사용해 볼 계획
+
+### kobert_ko_pytorch_chatbot_tutorial
+- SKTBrain의 [KoBert](https://github.com/SKTBrain/KoBERT)를 사용해 토큰화 부터 다시 진행 중
+- 문장을 토큰화 시키는 데까지 성공, 토큰화 하여 인코딩화를 어떻게 해야할지 검색, 고민 중
+
