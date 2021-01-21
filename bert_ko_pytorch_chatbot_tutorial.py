@@ -161,7 +161,7 @@ class Voc:
         
         return tokens
 
-MAX_LENGTH = 10  
+MAX_LENGTH = 30  
 
 def readVocs(datafile, corpus_name): # corpus_name : chatData / datafile : formatted_ko_conversations.txt
     print('Reading lines...')
@@ -566,9 +566,9 @@ clip = 50.0
 teacher_forcing_ratio = 1.0
 learning_rate = 0.0001
 decoder_learning_ratio = 5.0
-n_iteration = 12000
+n_iteration = 60000
 print_every = 1
-save_every = 10000
+save_every = 20000
 
 # Dropout 레이어를 학습 모드로 둡니다
 encoder.train()
