@@ -31,11 +31,10 @@
 ### bert_ko_pytorch_chatbot_tutorial
 - 3를 개선 시켜 [bert(bert-base-multilingual-cased)](https://arxiv.org/abs/1810.04805)를 이용하여 데이터 분리함
 - bert의 vocab을 이용하여 대화를 인코딩까지 완료함
-- 하지만 인코딩한 길이가 길어지는 문제가 있음. - 수정완료
 - 인코딩, 디코딩 부분까지 수정완료. 메모리 부족으로 훈련이 안되는데 어딘가 잘못된듯 - 수정완료(배치사이즈 64 -> 32로 수정)
 - 훈련까지 마치고 대화를 수행하면 동일한 말만 반복하는 문제발생 - 수정완료(훈련 횟수 4000 -> 12000)
 - 모든 부분 기존 tutorial과 차이점이 없어 훈련 수 12000으로 증가시켜 진행 - 여전히 제대로 된 대화 안됨
-- MAX_LENGTH = 30으로 증가 / 훈련 횟 수 6만번으로 증가시켜서 진행 중 
+- MAX_LENGTH = 30으로 증가 / 훈련 횟 수 6만번으로 증가시켜서 진행 중 - 여전히 제대로 된 대화 불가능
 - SKTBrain의 [KoBert](https://github.com/SKTBrain/KoBERT)를 사용해 볼 계획 \
 [.ipynb 바로가기](https://github.com/SeungJun9164/chatbot_test/blob/main/bert_ko_pytorch_chatbot_tutorial.ipynb)
 [.py 바로가기](https://github.com/SeungJun9164/chatbot_test/blob/main/bert_ko_pytorch_chatbot_tutorial.py)
