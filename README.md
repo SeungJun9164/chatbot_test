@@ -9,7 +9,7 @@
 - bert_ko_pytorch_chatbot_tutorial 와 동시에 진행 중
 - 훈련 횟수 8만번 / batch_size = 64 / loss = 0.8 
 - 현재 bert_ko와 마찬가지로 제대로 된 대답 불가능 \
-https://github.com/SeungJun9164/chatbot_test/blob/main/chatbot_test_capture/bert_en_capture.PNG
+![bert_en_capture](https://user-images.githubusercontent.com/60804222/106237097-6a416900-6241-11eb-8162-8f0ffe18fd37.PNG)
 [바로가기](https://github.com/SeungJun9164/chatbot_test/blob/main/bert_en_pytorch_chatbot_tutorial.ipynb)
 
 
@@ -38,7 +38,7 @@ https://github.com/SeungJun9164/chatbot_test/blob/main/chatbot_test_capture/bert
 - 모든 부분 기존 tutorial과 차이점이 없어 훈련 수 12000으로 증가시켜 진행 - 여전히 제대로 된 대화 안됨
 - MAX_LENGTH = 30으로 증가 / 훈련 횟 수 6만번으로 증가시켜서 진행 중 - 여전히 제대로 된 대화 불가능
 - SKTBrain의 [KoBert](https://github.com/SKTBrain/KoBERT)를 사용해 볼 계획 \
-https://github.com/SeungJun9164/chatbot_test/blob/main/chatbot_test_capture/bert_ko_capture.PNG
+![bert_ko_capture](https://user-images.githubusercontent.com/60804222/106237136-7af1df00-6241-11eb-8aa2-7d2a7282e905.PNG)
 [.ipynb 바로가기](https://github.com/SeungJun9164/chatbot_test/blob/main/bert_ko_pytorch_chatbot_tutorial.ipynb)
 [.py 바로가기](https://github.com/SeungJun9164/chatbot_test/blob/main/bert_ko_pytorch_chatbot_tutorial.py)
 
