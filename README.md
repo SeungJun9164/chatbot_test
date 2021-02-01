@@ -1,17 +1,17 @@
 # chatbot_test
 
 # 영어 챗봇 구현해보기
-### pytorch_chatbot_tutorial.ipynb
+### pytorch_chatbot_tutorial
 - [파이토치 튜토리얼](https://tutorials.pytorch.kr/beginner/chatbot_tutorial.html) \
 [바로가기](https://github.com/SeungJun9164/chatbot_test/blob/main/pytorch_chatbot_tutorial.ipynb)
 
-### bert_en_pytorch_chatbot_tutorial.ipynb
+### bert_en_pytorch_chatbot_tutorial
 - bert_ko_pytorch_chatbot_tutorial 와 동시에 진행 중
-- 훈련 횟수 8만번 / batch_size = 64 / loss = 0.8 
+- 훈련 횟수 3만번
+![image](https://user-images.githubusercontent.com/60804222/106424197-1df66300-64a5-11eb-8db2-046f3b767011.png) \ 
 - 현재 bert_ko와 마찬가지로 제대로 된 대답 불가능 \
-![bert_en_capture](https://user-images.githubusercontent.com/60804222/106237097-6a416900-6241-11eb-8162-8f0ffe18fd37.PNG) \
-[바로가기](https://github.com/SeungJun9164/chatbot_test/blob/main/bert_en_pytorch_chatbot_tutorial.ipynb)
-
+[주피터 바로가기](https://github.com/SeungJun9164/chatbot_test/blob/main/bert_en_pytorch_chatbot_tutorial.ipynb)
+[파이썬 바로가기](https://github.com/SeungJun9164/chatbot_test/blob/main/bert_en_pytorch_chatbot_tutorial.py)
 
 # 한국어 챗봇 구현해보기
 ### ko_pytorch_chatbot_tutorial 
@@ -41,6 +41,7 @@
 [.ipynb 바로가기](https://github.com/SeungJun9164/chatbot_test/blob/main/bert_ko_pytorch_chatbot_tutorial.ipynb)
 [.py 바로가기](https://github.com/SeungJun9164/chatbot_test/blob/main/bert_ko_pytorch_chatbot_tutorial.py)
 - SKTBrain의 [KoBert](https://github.com/SKTBrain/KoBERT)를 사용해 볼 계획 \
+
 ### kobert_ko_pytorch_chatbot_tutorial
 - SKTBrain의 [KoBert](https://github.com/SKTBrain/KoBERT)를 사용해 토큰화 부터 다시 진행 중
 - 문장을 토큰화 시키는 데까지 성공, 토큰화 하여 인코딩화를 어떻게 해야할지 검색, 고민 중
