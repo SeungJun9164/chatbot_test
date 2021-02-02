@@ -8,7 +8,9 @@
 ### bert_en_pytorch_chatbot_tutorial
 - bert_ko_pytorch_chatbot_tutorial 와 동시에 진행 중
 - 훈련 횟수 3만번
-![image](https://user-images.githubusercontent.com/60804222/106424197-1df66300-64a5-11eb-8db2-046f3b767011.png) \ 
+![image](https://user-images.githubusercontent.com/60804222/106424197-1df66300-64a5-11eb-8db2-046f3b767011.png) 
+- 훈련 횟수 6만번
+![image](https://user-images.githubusercontent.com/60804222/106560907-27e29980-656b-11eb-9963-2ba0af18f4f8.png)
 - 현재 bert_ko와 마찬가지로 제대로 된 대답 불가능 \
 [주피터 바로가기](https://github.com/SeungJun9164/chatbot_test/blob/main/bert_en_pytorch_chatbot_tutorial.ipynb)
 [파이썬 바로가기](https://github.com/SeungJun9164/chatbot_test/blob/main/bert_en_pytorch_chatbot_tutorial.py)
