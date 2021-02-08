@@ -7,11 +7,9 @@
 
 ### bert_en_pytorch_chatbot_tutorial
 - bert_ko_pytorch_chatbot_tutorial 와 동시에 진행 중
-- 훈련 횟수 3만번
-![image](https://user-images.githubusercontent.com/60804222/106424197-1df66300-64a5-11eb-8db2-046f3b767011.png)
-- 훈련 횟수 6만번 \
-![image](https://user-images.githubusercontent.com/60804222/106560907-27e29980-656b-11eb-9963-2ba0af18f4f8.png)
-- 훈련을 늘릴 수록 좀 나아지는 상황 \
+- 훈련 횟수 10만번 \
+![image](https://user-images.githubusercontent.com/60804222/107183427-25c48300-6a22-11eb-86d2-62f4ca99c0a8.png)
+- 훈련 횟수 증가하고 결과 후처리 진행하였더니 어느정도 대화가 가능해짐.
 [주피터 바로가기](https://github.com/SeungJun9164/chatbot_test/blob/main/bert_en_pytorch_chatbot_tutorial.ipynb)
 [파이썬 바로가기](https://github.com/SeungJun9164/chatbot_test/blob/main/bert_en_pytorch_chatbot_tutorial.py)
 
