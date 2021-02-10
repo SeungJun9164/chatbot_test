@@ -522,11 +522,11 @@ hidden_size = 500
 encoder_n_layers = 2
 decoder_n_layers = 2
 dropout = 0.1
-batch_size = 32
+batch_size = 64
 
 
 loadFilename = None
-checkpoint_iter = 55000
+checkpoint_iter = 60000
 loadFilename = os.path.join(save_dir, model_name, corpus_name,
                             '{}-{}_{}'.format(encoder_n_layers, decoder_n_layers, hidden_size),
                             '{}_checkpoint.tar'.format(checkpoint_iter))
@@ -673,6 +673,8 @@ def evaluate(encoder, decoder, searcher, voc, sentence, max_length=MAX_LENGTH):
 def evaluateInput(encoder, decoder, searcher, voc):
     input_sentence = ''
     while(1):
+        result = []
+        cnt = 0
         try:
             # 입력 문장을 받아옵니다
             input_sentence = input('> ')
@@ -682,7 +684,17 @@ def evaluateInput(encoder, decoder, searcher, voc):
             output_words = evaluate(encoder, decoder, searcher, voc, input_sentence)
             # 응답 문장을 형식에 맞춰 출력합니다
             output_words[:] = [x for x in output_words if not (x == '[CLS]' or x == '[SEP]' or x == 'PAD' or x == 'SOS' or x == 'EOS')]
-            print('Bot:', ' '.join(output_words))
+            
+            # ##제거
+            for i, text in enumerate(output_words):
+                if text[0] == '#':
+                    cnt += 1
+                    temp = result[i - cnt] + output_words[output_words.index(text)].replace(text, text[2:])
+                    result.append(temp)
+                    result.pop(i - cnt)
+                else:
+                    result.append(text)
+            print('Bot:', ' '.join(result))
 
         except KeyError:
             print("Error: Encountered unknown word.")

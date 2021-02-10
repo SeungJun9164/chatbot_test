@@ -533,7 +533,7 @@ batch_size = 64
 
 
 loadFilename = None
-checkpoint_iter = 90000
+checkpoint_iter = 110000
 loadFilename = os.path.join(save_dir, model_name, corpus_name,
                             '{}-{}_{}'.format(encoder_n_layers, decoder_n_layers, hidden_size),
                             '{}_checkpoint.tar'.format(checkpoint_iter))
@@ -573,7 +573,7 @@ clip = 50.0
 teacher_forcing_ratio = 1.0
 learning_rate = 0.0001
 decoder_learning_ratio = 5.0
-n_iteration = 100000
+n_iteration = 120000
 print_every = 1
 save_every = 10000
 
