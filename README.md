@@ -9,7 +9,7 @@
 - bert_ko_pytorch_chatbot_tutorial 와 동시에 진행 중
 - 훈련 횟수 10만번 \
 ![image](https://user-images.githubusercontent.com/60804222/107183427-25c48300-6a22-11eb-86d2-62f4ca99c0a8.png)
-- 훈련 횟수 증가하고 결과 후처리 진행하였더니 어느정도 대화가 가능해짐.
+- 훈련 횟수 증가하고 결과 후처리 진행하였더니 어느정도 대화가 가능해짐. \
 [주피터 바로가기](https://github.com/SeungJun9164/chatbot_test/blob/main/bert_en_pytorch_chatbot_tutorial.ipynb)
 [파이썬 바로가기](https://github.com/SeungJun9164/chatbot_test/blob/main/bert_en_pytorch_chatbot_tutorial.py)
 
