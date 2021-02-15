@@ -566,9 +566,9 @@ clip = 50.0
 teacher_forcing_ratio = 1.0
 learning_rate = 0.0001
 decoder_learning_ratio = 5.0
-n_iteration = 60000
+n_iteration = 100000
 print_every = 1
-save_every = 5000
+save_every = 25000
 
 # Dropout 레이어를 학습 모드로 둡니다
 encoder.train()
