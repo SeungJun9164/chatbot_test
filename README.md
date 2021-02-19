@@ -6,10 +6,12 @@
 [바로가기](https://github.com/SeungJun9164/chatbot_test/blob/main/pytorch_chatbot_tutorial.ipynb)
 
 ### bert_en_pytorch_chatbot_tutorial
+- [bert 논문](https://arxiv.org/abs/1810.04805)
 - 파이토치 튜토리얼과 동일한 모델사용
-- 훈련 횟수 10만번 \
-![image](https://user-images.githubusercontent.com/60804222/107183427-25c48300-6a22-11eb-86d2-62f4ca99c0a8.png)
-- 훈련 횟수 증가하고 결과 후처리 진행하였더니 어느정도 대화가 가능해짐. \
+- [bert(bert-base-multilingual-cased)](https://huggingface.co/transformers/pretrained_models.html)를 이용
+- 훈련 횟수 10만번 정도 진행해야 정상적인 대화가 진행 가능 
+
+- [bert(bert-large-uncased)](https://huggingface.co/transformers/pretrained_models.html)를 이용했을 경우 3만번 정도 진행하면 어느정도 대화 가능 \
 [주피터 바로가기](https://github.com/SeungJun9164/chatbot_test/blob/main/bert_en_pytorch_chatbot_tutorial.ipynb)
 [파이썬 바로가기](https://github.com/SeungJun9164/chatbot_test/blob/main/bert_en_pytorch_chatbot_tutorial.py)
 
