@@ -127,7 +127,7 @@ SOS_token = 1
 EOS_token = 2
 CLS_token = 101
 SEP_token = 102
-tokenizer = BertTokenizer.from_pretrained('bert-base-multilingual-cased', do_lower_case=False)
+tokenizer = BertTokenizer.from_pretrained('bert-large-cased', do_lower_case=False)
 
 class Voc:
     def __init__(self, name):
@@ -144,10 +144,7 @@ class Voc:
         sentence = self.tokenizer.encode(sentence)
         tokens = self.tokenizer.convert_ids_to_tokens(sentence)
         self.tokens = tokens
-        # 잘 마실게. [SEP] 오후에 학부모 대표 모임에 사과하러 가는 거 교감선생님만 가시면 안돼요? 전 약속이 있어서..
-        #for word in tokens:
-            #self.addWord(word)
-        #print(tokens)
+
         return tokens            
 
 MAX_LENGTH = 10  
@@ -506,7 +503,7 @@ def trainIters(model_name, voc, pairs, encoder, decoder, encoder_optimizer, deco
 
         # Checkpoint를 저장
         if (iteration % save_every == 0):
-            directory = os.path.join(save_dir, model_name, corpus_name, '{}-{}_{}'.format(encoder_n_layers, decoder_n_layers, hidden_size))
+            directory = os.path.join(save_dir, model_name, corpus_name, 'large', '{}-{}_{}'.format(encoder_n_layers, decoder_n_layers, hidden_size))
             if not os.path.exists(directory):
                 os.makedirs(directory)
             torch.save({
@@ -525,7 +522,7 @@ model_name = 'cb_model'
 attn_model = 'dot'
 #attn_model = 'general'
 #attn_model = 'concat'
-hidden_size = 500
+hidden_size = 768
 encoder_n_layers = 2
 decoder_n_layers = 2
 dropout = 0.1
@@ -533,10 +530,10 @@ batch_size = 64
 
 
 loadFilename = None
-checkpoint_iter = 110000
-loadFilename = os.path.join(save_dir, model_name, corpus_name,
-                            '{}-{}_{}'.format(encoder_n_layers, decoder_n_layers, hidden_size),
-                            '{}_checkpoint.tar'.format(checkpoint_iter))
+checkpoint_iter = 40000
+#loadFilename = os.path.join(save_dir, model_name, corpus_name, 'large',
+#                            '{}-{}_{}'.format(encoder_n_layers, decoder_n_layers, hidden_size),
+#                            '{}_checkpoint.tar'.format(checkpoint_iter))
 
 
 # loadFilename이 제공되는 경우에는 모델을 불러옵니다
@@ -573,9 +570,9 @@ clip = 50.0
 teacher_forcing_ratio = 1.0
 learning_rate = 0.0001
 decoder_learning_ratio = 5.0
-n_iteration = 120000
+n_iteration = 50000
 print_every = 1
-save_every = 10000
+save_every = 25000
 
 # Dropout 레이어를 학습 모드로 둡니다
 encoder.train()
@@ -674,9 +671,6 @@ def evaluate(encoder, decoder, searcher, voc, sentence, max_length=MAX_LENGTH):
     #print(scores)
 
     # 인덱스 -> 단어    
-    #print([tokenizer.convert_ids_to_tokens(token) for token in G_tokens])
-#     for token in G_tokens:
-#         print(tokenizer.convert_ids_to_tokens([token]))
     decoded_words = tokenizer.convert_ids_to_tokens(G_tokens) ###수정해야함
     #print(decoded_words)
     return decoded_words
@@ -691,7 +685,7 @@ def evaluateInput(encoder, decoder, searcher, voc):
             # 입력 문장을 받아옵니다
             input_sentence = input('> ')
             # 종료 조건인지 검사합니다
-            if input_sentence == 'exit' or input_sentence == '종료': break
+            if input_sentence == 'exit' or input_sentence == 'quit': break
             # 문장을 평가합니다
             output_words = evaluate(encoder, decoder, searcher, voc, input_sentence)
             # 응답 문장을 형식에 맞춰 출력합니다

@@ -518,7 +518,7 @@ model_name = 'cb_model'
 attn_model = 'dot'
 #attn_model = 'general'
 #attn_model = 'concat'
-hidden_size = 500
+hidden_size = 768
 encoder_n_layers = 2
 decoder_n_layers = 2
 dropout = 0.1
@@ -526,10 +526,10 @@ batch_size = 64
 
 
 loadFilename = None
-checkpoint_iter = 60000
-loadFilename = os.path.join(save_dir, model_name, corpus_name,
-                            '{}-{}_{}'.format(encoder_n_layers, decoder_n_layers, hidden_size),
-                            '{}_checkpoint.tar'.format(checkpoint_iter))
+checkpoint_iter = 40000
+#loadFilename = os.path.join(save_dir, model_name, corpus_name,
+#                            '{}-{}_{}'.format(encoder_n_layers, decoder_n_layers, hidden_size),
+#                            '{}_checkpoint.tar'.format(checkpoint_iter))
 
 
 # loadFilename이 제공되는 경우에는 모델을 불러옵니다
@@ -566,9 +566,9 @@ clip = 50.0
 teacher_forcing_ratio = 1.0
 learning_rate = 0.0001
 decoder_learning_ratio = 5.0
-n_iteration = 100000
+n_iteration = 60000
 print_every = 1
-save_every = 25000
+save_every = 10000
 
 # Dropout 레이어를 학습 모드로 둡니다
 encoder.train()
