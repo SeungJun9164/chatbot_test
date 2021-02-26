@@ -11,7 +11,7 @@
 - [bert(bert-base-multilingual-cased)](https://huggingface.co/transformers/pretrained_models.html)를 이용했을 경우 10만번 이상의 훈련이 필요 \
 ![image](https://user-images.githubusercontent.com/60804222/108584711-e170a580-7386-11eb-96b4-cafe4b33cd5a.png) 
 
-- [bert(bert-large-uncased)](https://huggingface.co/transformers/pretrained_models.html)를 이용했을 경우 3만번 정도 진행하면 어느정도 대화 가능 \
+- [bert(bert-large-uncased)](https://huggingface.co/transformers/pretrained_models.html)를 이용했을 경우 5만번 정도 진행하면 어느정도 대화 가능 \
 ![image](https://user-images.githubusercontent.com/60804222/108584725-f64d3900-7386-11eb-9bba-800bf043f74f.png) \
 [주피터 바로가기](https://github.com/SeungJun9164/chatbot_test/blob/main/bert_en_pytorch_chatbot_tutorial.ipynb) 
 [파이썬 바로가기](https://github.com/SeungJun9164/chatbot_test/blob/main/bert_en_pytorch_chatbot_tutorial.py)
