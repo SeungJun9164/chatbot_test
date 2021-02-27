@@ -47,7 +47,6 @@
 
 ### kobert_ko_pytorch_chatbot_tutorial
 - SKTBrain의 [KoBert](https://github.com/SKTBrain/KoBERT)를 사용해 토큰화 부터 다시 진행 중
-- 문장을 토큰화 시키는 데까지 성공, 토큰화 하여 인코딩화를 어떻게 해야할지 검색, 고민 중
-- 인코딩화 까지 완료하여 채팅하는 데 까지 완료, 제대로 된 대답 불가능 \
+- 테스트중..
 [바로가기](https://github.com/SeungJun9164/chatbot_test/blob/main/kobert_ko_pytorch_chatbot_tutorial.ipynb)
 
