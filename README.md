@@ -47,6 +47,6 @@
 
 ### kobert_ko_pytorch_chatbot_tutorial
 - SKTBrain의 [KoBert](https://github.com/SKTBrain/KoBERT)를 사용해 토큰화 부터 다시 진행 중
-- 테스트중..
+- 테스트중...
 [바로가기](https://github.com/SeungJun9164/chatbot_test/blob/main/kobert_ko_pytorch_chatbot_tutorial.ipynb)
 
