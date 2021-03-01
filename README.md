@@ -17,7 +17,7 @@
 [파이썬 바로가기](https://github.com/SeungJun9164/chatbot_test/blob/main/bert_en_pytorch_chatbot_tutorial.py)
 
 # 한국어 챗봇 튜토리얼 모델로 구현해보기
-***한국어 챗봇 튜토리얼 모델은 정상적으로 작동 되지 않음***
+***한국어 챗봇 튜토리얼 모델은 정상적으로 작동 되지 않음*** \
 ***현재 모델로는 한국어를 처리하기에 맞지 않다고 판단하여 더 이상 이 모델로는 구현하지 않을 것***
 ### ko_pytorch_chatbot_tutorial 
 - [송영숙님의 깃허브](https://github.com/songys/Chatbot_data)의 데이터를 이용하여 구현
