@@ -1,21 +1,18 @@
-#!/usr/bin/env python
-# coding: utf-8
+# KoBART
+# https://github.com/SKT-AI/KoBART
 
-# ##### argparse
+# KoBART Chatbot
+# https://github.com/haven-jeon/KoBART-chatbot
+
+# argparse
 # https://greeksharifa.github.io/references/2019/02/12/argparse-usage/
-# 
-# ##### pytorch-lightning 
+
+# pytorch-lightning
 # https://baeseongsu.github.io/posts/pytorch-lightning-introduction/
-
-# In[1]:
-
 
 import argparse
 import logging
 import os
-
-
-# In[2]:
 
 
 import numpy as np
@@ -27,28 +24,20 @@ from torch.utils.data import DataLoader, Dataset
 from transformers import (BartForConditionalGeneration, PreTrainedTokenizerFast)
 from transformers.optimization import AdamW, get_cosine_schedule_with_warmup
 
-
-# In[3]:
-
-
 parser = argparse.ArgumentParser(description = 'KOBART Chit-Chat')
 
+# python kobart_test.py --subtask CoLA
 parser.add_argument('--subtask', type=str, default='NSMC', help='NSMC, CoLA, QPair')
 
+# python kobart_test.py --checkpoint_path ww
 parser.add_argument('--checkpoint_path', type=str, help='checkpoint path')
 
 # action='store_true, store_false' : 인자를 적으면(값은 주지 않는다) 해당 인자에 True나 False가 저장
+# .py --chat -> True / .py -> False
 parser.add_argument('--chat', action='store_true', default=False, help='response generation on given user input')
-
-
-# In[4]:
-
 
 logger = logging.getLogger() # logger생성
 logger.setLevel(logging.INFO) # 로그의 출력 기준 설정
-
-
-# In[5]:
 
 
 class ArgsBase():
@@ -72,9 +61,6 @@ class ArgsBase():
                             help='max seq len')
         
         return parser
-
-
-# In[6]:
 
 
 class ChatDataset(Dataset):
@@ -126,10 +112,6 @@ class ChatDataset(Dataset):
                 'decoder_attention_mask': np.array(decoder_attention_mask, dtype=np.float),
                 'labels': np.array(labels, dtype=np.int_)}
 
-
-# In[7]:
-
-
 class ChatDataModule(pl.LightningDataModule):
     def __init__(self, train_file, test_file, tok_vocab, max_seq_len=128, batch_size=32, num_workers=5):
         
@@ -177,9 +159,6 @@ class ChatDataModule(pl.LightningDataModule):
         test = DataLoader(self.test, batch_size=self.batch_size, num_workers=self.num_workers, shuffle=False)
         
         return test
-
-
-# In[8]:
 
 
 class Base(pl.LightningModule):
@@ -234,9 +213,6 @@ class Base(pl.LightningModule):
         return [optimizer], [lr_scheduler]
 
 
-# In[9]:
-
-
 class KoBARTConditionalGeneration(Base):
     def __init__(self, hparams, **kwargs):
         super(KoBARTConditionalGeneration, self).__init__(hparams, **kwargs)
@@ -285,9 +261,6 @@ class KoBARTConditionalGeneration(Base):
         return a.replace('<s>', '').replace('</s>', '')
 
 
-# In[10]:
-
-
 if __name__ == '__main__':
     parser = Base.add_model_specific_args(parser)
     parser = ArgsBase.add_model_specific_args(parser)
@@ -323,23 +296,14 @@ if __name__ == '__main__':
                 break
             print('Simsimi > {}'.format(model.chat(q)))
 
-
-# In[11]:
-
-
 from kobart import get_pytorch_kobart_model, get_kobart_tokenizer
 get_kobart_tokenizer(".")
 get_pytorch_kobart_model(cachedir=".")
 
 
-# In[12]:
-
-
 # 실행방법
-#kobart_chit_chat.py  --gradient_clip_val 1.0 --max_epochs 3 --default_root_dir logs --model_path kobart_from_pretrained  --tokenizer_path emji_tokenizer --chat --gpus 1
+# kobart_chit_chat.py  --gradient_clip_val 1.0 --max_epochs 3 --default_root_dir logs --model_path kobart_from_pretrained  --tokenizer_path emji_tokenizer --chat --gpus 1
 
-
-# In[ ]:
 
 
 
