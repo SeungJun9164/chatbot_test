@@ -10,6 +10,11 @@
 # __getitem__ , __len__
 # http://hyeonjae-blog.logdown.com/posts/776615-python-getitem-len
 
+# logging
+# https://greeksharifa.github.io/%ED%8C%8C%EC%9D%B4%EC%8D%AC/2019/12/13/logging/
+# 소프트웨어가 작동 중일 때 발생하는 여러 ‘사건’을 추적하고, 개발자는 이를 통해 어떤 ‘사건’이 발생하였고 따라서 앞으로 어떤 해결책을 강구해야 할지 판단 / 이 중요도를 level
+
+
 # pytorch-lightning
 # https://baeseongsu.github.io/posts/pytorch-lightning-introduction/
 
@@ -66,7 +71,7 @@ class ArgsBase():
         
         return parser
 
-
+# csv파일에서 문장(단어) -> 토큰화 -> 인코딩화 시키는 함수
 class ChatDataset():
     def __init__(self, filepath, tok_vocab, max_seq_len=128) -> None:
         self.filepath = filepath
@@ -129,6 +134,7 @@ class ChatDataset():
                 'decoder_attention_mask': np.array(decoder_attention_mask, dtype=np.float),
                 'labels': np.array(labels, dtype=np.int_)}
 
+# train, validation, test 데이터 설정하는 함수
 class ChatDataModule(pl.LightningDataModule):
     def __init__(self, train_file, test_file, tok_vocab, max_seq_len=128, batch_size=32, num_workers=5):
         
