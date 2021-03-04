@@ -45,13 +45,13 @@ class ArgsBase():
     def add_model_specific_args(parent_parser):
         parser = argparse.ArgumentParser(parents=[parent_parser], add_help=False)
         
-        parser.add_argument('--train_file', type=str, default='Chatbot_data/train.csv',
+        parser.add_argument('--train_file', type=str, default=r'C:\Users\abc\Desktop\kobart_test\Chatbot_data\train.csv',
                             help='train file')
 
-        parser.add_argument('--test_file', type=str, default='Chatbot_data/test.csv',
+        parser.add_argument('--test_file', type=str, default=r'C:\Users\abc\Desktop\kobart_test\Chatbot_data\test.csv',
                             help='test file')
 
-        parser.add_argument('--tokenizer_path', type=str, default='tokenizer',
+        parser.add_argument('--tokenizer_path', type=str, default=r'C:\Users\abc\jupyter\pytorch\chatbot\emji_tokenizer',
                             help='tokenizer')
         
         parser.add_argument('--batch_size', type=int, default=14,
@@ -216,7 +216,7 @@ class Base(pl.LightningModule):
 class KoBARTConditionalGeneration(Base):
     def __init__(self, hparams, **kwargs):
         super(KoBARTConditionalGeneration, self).__init__(hparams, **kwargs)
-        self.model = BartForCondtionalGeneration.from_pretrained(self.hparams.model_path)
+        self.model = BartForConditionalGeneration.from_pretrained(self.hparams.model_path)
         self.model.train()
         self.bos_token = '<s>'
         self.eos_token = '</s>'
