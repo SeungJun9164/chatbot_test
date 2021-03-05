@@ -73,7 +73,7 @@ class ArgsBase():
 
 # csv파일에서 문장(단어) -> 토큰화 -> 인코딩화 시키는 함수
 class ChatDataset():
-    def __init__(self, filepath, tok_vocab, max_seq_len=128) -> None:
+    def __init__(self, filepath, tok_vocab, max_seq_len=128) -> None: # None : return 형
         self.filepath = filepath
         self.data = pd.read_csv(self.filepath)
         self.bos_token = '<s>'
@@ -207,8 +207,13 @@ class Base(pl.LightningModule):
                             help='kobart model path')
         return parser
 
+    # huggingface의 transformers 가중치 설정하는 법
+    # https://github.com/huggingface/transformers/issues/1218
+    # https://www.programcreek.com/python/example/92667/torch.optim.Adam
     def configure_optimizers(self):
         # Prepare optimizer
+        # param_optimizer : tuple형식
+        # # named_parameters() : model이 어떻게 생겼는지 확인 model의 모든 파라미터 출력
         param_optimizer = list(self.model.named_parameters())
         no_decay = ['bias', 'LayerNorm.bias', 'LayerNorm.weight']
         optimizer_grouped_parameters = [
@@ -297,7 +302,8 @@ if __name__ == '__main__':
     dm = ChatDataModule(args.train_file, args.test_file, os.path.join(args.tokenizer_path, 'model.json'),
                                                                      max_seq_len=args.max_seq_len,
                                                                      num_workers=args.num_workers)
-    checkpoint_callback = pl.callbacks.ModelCheckpoint(monitor='val_loss', 
+    # checkpoint 저장
+    checkpoint_callback = pl.callbacks.ModelCheckpoint(monitor='val_loss',
                                                        dirpath=args.default_root_dir, 
                                                        filename='model_chp/{epoch_02d}-{val_loss:.3f}', 
                                                        verbose=True, 
